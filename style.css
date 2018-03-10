@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-image: url(ev-232339-unsplash.jpg);
+    background-size: cover;
+
+
+
+}
+nav{
+    background-color: ghostwhite;
+    opacity:0.8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+nav:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.logo{
+    margin: 0;
+    padding: 0;
+}
+.logo, .menu{
+    display:inline-block;
+}
+.menu{
+    float: right; /*menuyu saga almaya yarar*/
+    margin:20px;
+}
+header{
+    background-image: url(william-bout-264826-unsplash.jpg);
+    height:500px;
+    background-size: cover;
+    background-repeat: no-repeat;  /*arkaplan resminin surekli tekrarlamasini onluyor bazi siterlerde bu ozellik
+    olmadigi icin surekli ayni resmi tekrar eder. */
+    background-attachment: fixed;   /* simin asagi dogru kaymasini saglar . */
+    background-position-y: -160px;
+    font-family: "Noto Serif Kannada";
+
+
+}
+header.p{
+    margin: 0;
+}
+.hero-container{
+text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+    font-weight: 700;
+
+
+
+}
+
+.menu ul{   /* menu ul veya menu > ul yapabiliriz ikiside ayni*/
+    list-style:none; /* bu da madde isaretlerini yok eder.*/
+    padding-left: 0;
+    margin:0;
+}
+.menu ul li{  /*tum li larda yanyana koymamizi sagliyor.*/
+    display:inline-block;
+    font-family: sans-serif;
+    margin-right:15px;
+
+}
+.menu ul li a{
+    text-decoration: none;
+    color:black;
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 500px;
+
+
+}
+.menu ul li a.active1:hover {
+    background-repeat: no-repeat;
+    background-image: url(home-48616_640.png);
+    width: 128px;
+    height: 128px;
+    background-position-x: 20px;
+    background-size: 30px ;
+    background-color: ghostwhite;
+    color: rgba(255,255,255,0);
+    border-radius: 500px;
+    padding:5px;
+    transition:all 0.5s ease;
+
+
+
+}
+.menu ul li a.active2:hover {
+    background-repeat: no-repeat;
+    background-image: url("crossroads-icon.png");
+    width: 128px;
+    height: 128px;
+    background-position-x: 20px;
+    background-size: 30px ;
+    background-color:ghostwhite;
+    color: rgba(255,255,255,0);
+    border-radius: 500px;
+    padding:5px;
+    transition:all 0.5s ease;
+    filter:blur(0px);
+    -webkit-filter: blur(0px);
+}
+.menu ul li a.active3:hover {
+    background-repeat: no-repeat;
+    background-image: url("Relationship-icon.png");
+    width: 128px;
+    height: 128px;
+    background-position-x: 35px;
+    background-size: 30px ;
+    background-color: ghostwhite;
+    color: rgba(255,255,255,0);
+    border-radius: 500px;
+    padding:5px;
+    transition:all 0.5s ease;
+    filter:blur(0px);
+    -webkit-filter: blur(0px);
+}
+.bio{
+    color: blue;
+    background-attachment: fixed;
+    margin: 0px;
+
+}
