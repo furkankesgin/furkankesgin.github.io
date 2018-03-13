@@ -140,6 +140,6 @@ text-align: center;
 }
 .bio p{
     margin:10px;
-    font-size:10px;
+    font-size:-10px;
 }
 
