@@ -3,7 +3,7 @@
 }
 body{
     margin: 0;
-    background-image: url(ev-232339-unsplash.jpg);
+    /*background-image: url(ev-232339-unsplash.jpg);*/
     background-size: cover;
 
 
@@ -15,6 +15,7 @@ nav{
     position: fixed;
     top: 0;
     width: 100%;
+    background-size: cover;
 
 }
 nav:after{
@@ -33,31 +34,6 @@ nav:after{
     float: right; /*menuyu saga almaya yarar*/
     margin:20px;
 }
-header{
-    background-image: url(william-bout-264826-unsplash.jpg);
-    height:500px;
-    background-size: cover;
-    background-repeat: no-repeat;  /*arkaplan resminin surekli tekrarlamasini onluyor bazi siterlerde bu ozellik
-    olmadigi icin surekli ayni resmi tekrar eder. */
-    background-attachment: fixed;   /* simin asagi dogru kaymasini saglar . */
-    background-position-y: -160px;
-    font-family: "Noto Serif Kannada";
-
-
-}
-header.p{
-    margin: 0;
-}
-.hero-container{
-text-align: center;
-    padding-top: 100px;
-    font-size: 30px;
-    font-weight: 700;
-
-
-
-}
-
 .menu ul{   /* menu ul veya menu > ul yapabiliriz ikiside ayni*/
     list-style:none; /* bu da madde isaretlerini yok eder.*/
     padding-left: 0;
@@ -125,9 +101,44 @@ text-align: center;
     filter:blur(0px);
     -webkit-filter: blur(0px);
 }
+header{
+    background-image: url(william-bout-264826-unsplash.jpg);
+    height:500px;
+    background-size: cover;
+    background-repeat: no-repeat;  /*arkaplan resminin surekli tekrarlamasini onluyor bazi siterlerde bu ozellik
+    olmadigi icin surekli ayni resmi tekrar eder. */
+    background-attachment: fixed;   /* simin asagi dogru kaymasini saglar . */
+    background-position-y: -160px;
+    font-family: "Noto Serif Kannada";
+
+
+}
+header.p{
+    margin: 0;
+}
+.hero-container{
+text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+
 .bio{
-    color: blue;
+    color: black;
     background-attachment: fixed;
     margin: 0px;
 
 }
+.bio .photo{
+    float:left;
+    padding:0 10px 10px 0;
+
+    width: 150px;
+    height: 200px;
+}
+.bio p{
+    margin:10px;
+}
+
