@@ -1,0 +1,484 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    /*background-image: url(ev-232339-unsplash.jpg);*/
+    background-size: cover;
+    background-color: rgb(240,230,240);
+
+
+
+}
+nav{
+    background-color: ghostwhite;
+    opacity:0.8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-size: cover;
+
+}
+nav:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.logo{
+    margin-left: 10px;
+    padding: 0;
+}
+.logo, .menu{
+    display:inline-block;
+}
+.menu{
+    float: right; /*menuyu saga almaya yarar*/
+    margin:20px;
+}
+.menu ul{   /* menu ul veya menu > ul yapabiliriz ikiside ayni*/
+    list-style:none; /* bu da madde isaretlerini yok eder.*/
+    padding-left: 0;
+    margin:0;
+}
+.menu ul li{  /*tum li larda yanyana koymamizi sagliyor.*/
+    display:inline-block;
+    font-family: sans-serif;
+    margin-right:15px;
+
+}
+.menu ul li a{
+    text-decoration: none;
+    color:black;
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 500px;
+
+
+}
+.menu ul li a.active1:hover {
+    background-repeat: no-repeat;
+    background-image: url(images/home-48616_640.png);
+    width: 128px;
+    height: 128px;
+    background-position-x: 20px;
+    background-size: 30px ;
+    background-color: ghostwhite;
+    color: rgba(255,255,255,0);
+    border-radius: 500px;
+    padding:5px;
+    transition:all 0.5s ease;
+
+
+
+}
+.menu ul li a.active2:hover {
+    background-repeat: no-repeat;
+    background-image: url(images/crossroads-icon.png);
+    width: 128px;
+    height: 128px;
+    background-position-x: 20px;
+    background-size: 30px ;
+    background-color:ghostwhite;
+    color: rgba(255,255,255,0);
+    border-radius: 500px;
+    padding:5px;
+    transition:all 0.5s ease;
+    filter:blur(0px);
+    -webkit-filter: blur(0px);
+}
+.menu ul li a.active3:hover {
+    background-repeat: no-repeat;
+    background-image: url(images/Relationship-icon.png);
+    width: 128px;
+    height: 128px;
+    background-position-x: 35px;
+    background-size: 30px ;
+    background-color: ghostwhite;
+    color: rgba(255,255,255,0);
+    border-radius: 500px;
+    padding:5px;
+    transition:all 0.5s ease;
+    filter:blur(0px);
+    -webkit-filter: blur(0px);
+}
+header{
+    background-image: url(images/william-bout-264826-unsplash.jpg);
+    height:500px;
+    background-size: cover;
+    background-repeat: no-repeat;  /*arkaplan resminin surekli tekrarlamasini onluyor bazi siterlerde bu ozellik
+    olmadigi icin surekli ayni resmi tekrar eder. */
+    background-attachment: fixed;   /* simin asagi dogru kaymasini saglar . */
+    background-position-y: -160px;
+    font-family: "Noto Serif Kannada";
+
+
+}
+header.p{
+    margin: 0;
+}
+.hero-container{
+text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+.hero-container h6{
+    filter: blur(1px);
+    color: #85af4b;
+}
+.hero-container h6:hover{
+    background-image: url("images/ASD.PNG");
+    color: rgba(0,255,32,0);
+    filter: blur(0px);
+    border-radius: 500px;
+    background-repeat: no-repeat;
+    background-position-x:50%;
+    background-size: 500px;
+    border-color: #125688;
+    background-position-y: 10px;
+    margin-top: 100px;
+
+
+}
+
+.about-me h2{
+    color:#333;
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    margin-bottom:40px;
+}
+.about-me h2:after{
+    content:"";
+    position: absolute; /*alttakilerin yukariya yani resimle birlesmrsini saglar */
+    width: 80px;
+    height: 2px;
+    bottom: 0px;
+    margin-left: -40px;
+    background-color:#85af4b;
+    right: 50%;
+    left: 50%;
+    margin-top:35px;
+}
+
+.bio{
+    color: black;
+    background-attachment: fixed;
+    margin-left: 10px;
+    background-color: #eeedee;
+    margin-top: 0;
+
+}
+.bio .photo{
+    float:left;
+    padding:0 10px 10px 0;
+    margin-right: 10px;
+
+    width: 150px;
+    height: 200px;
+}
+.bio p{
+    margin:10px;
+    text-indent: 50px;
+
+}
+
+/*sosyal medya iconlari */
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100px;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+.fa-envelope-o{
+    background:#125688;
+    color: white;
+    float: right;
+}
+
+.bio .school{
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 900;
+}
+.bio .school:hover{
+    background-color: #3B5998;
+    color: darkgray;
+    border-color: #3B5998;
+    border-radius: 500px;
+    padding: 5px;
+}
+.bio .memleket{
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 900;
+}
+.bio .memleket:hover{
+    background-color: #3B5998;
+    color: darkgray;
+    border-color: #3B5998;
+    border-radius: 500px;
+    padding: 5px;
+
+}
+.bio .böte{
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 900;
+}
+.bio .böte:hover{
+    background-color: #3B5998;
+    color: darkgray;
+    border-color: #3B5998;
+    border-radius: 500px;
+    padding: 5px;}
+.bio .siberguvenlik{
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 900;
+}
+.bio .siberguvenlik:hover{
+    background-color: #3B5998;
+    color: darkgray;
+    border-color: #3B5998;
+    border-radius: 500px;
+    padding: 5px;
+
+}
+
+.bio .robot{
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 900;
+}
+.bio .robot:hover{
+    background-color: #3B5998;
+    color: darkgray;
+    border-color: #3B5998;
+    border-radius: 500px;
+    padding: 5px;
+
+}
+
+.my-projects {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+.my-projects:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.my-projects h2{
+    text-transform: uppercase;
+    margin-top: 0;
+    position: relative;
+    font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;
+    color:black;
+}
+
+.my-projects h2:after{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    margin-left: -40px;
+    left:50%;
+    bottom: 0px;
+    background-color: #85af4b;
+    margin-top: 35px;
+
+}
+.my-projects .my-projects1,
+.my-projects .my-projects2,
+.my-projects .my-projects3{
+    height: 300px;
+    width: 30%;
+    overflow:hidden;
+    position: relative;
+    float: left;
+
+}
+
+.my-projects .my-projects1{
+    background-image:url(images/markus-spiske-153537-unsplash.jpg);
+    background-size: cover;
+    margin-left: 2.5%;
+    margin-right: 1.5%;
+    background-repeat:repeat;
+    background-attachment: scroll;
+}
+.my-projects .my-projects2{
+    background-image:url(images/imgix-391808-unsplash.jpg);
+    background-size: cover;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-repeat:repeat;
+    background-attachment: scroll;
+}
+.my-projects .my-projects3{
+    background-image:url(images/markus-spiske-221494-unsplash.jpg);
+    background-size: cover;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-repeat:repeat;
+    background-attachment: scroll;
+}
+.my-projects .overlay{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 310px;
+}
+.my-projects .overlay:hover{
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 130px;
+    transition:all 0.5s ease;
+}
+.my-projects .overlay2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 310px;
+}
+.my-projects .overlay2:hover{
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 130px;
+    transition:all 0.5s ease;
+}
+.overlay a{
+    display: inline-block;
+    font-size: 18px;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+
+}
+.overlay2 a{
+    display: inline-block;
+    font-size: 18px;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+
+}
+.my-projects4,
+.my-projects5{
+    height: 300px;
+    width: 40%;
+    overflow:hidden;
+    position: relative;
+    float: left;
+    margin-top: 50px;
+    margin-left:50px;
+
+
+}
+.my-projects h2{
+    margin-top: 30px;
+}
+.my-projects4{
+    background-image:url(images/optimize.svg);
+    background-size: cover;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-repeat:repeat;
+    background-attachment: scroll;
+}
+.my-projects5{
+    background-image:url(images/XSS_web-for-penterster-solution.png);
+    background-size: cover;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-repeat:repeat;
+    background-attachment: scroll;
+    background-position-x: -100px;
+}
+.metin{
+    background-color: rgba(0,255,32,0.12);
+
+}
+.metin p{
+    text-indent: 50px;
+    margin-top: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+footer{
+    background-color: rgba(4,110,18,0.35);
+    width: 100%;
+    float: right;
+    padding-top: 10px;
+
+
+}
+.my-projects{
+    background-color: rgba(0,255,32,0.12);
+}
+
+/*PRACTICE PAGE START HERE */
+
+.graph img{
+    margin-top: 50px;
+    width: 100%;
+    height: 50%;
+}
+.graph_metin a{
+
+    text-decoration: none;
+    color: #85af2e;
+    font-weight: 900;
+    margin-left: 400px;
+
+}
+.graph_metin a:hover{
+
+    color: black;
+    background-color: #85af4b;
+    border-radius: 500px;
+    padding: 5px;
+
+}
+.countries_header h2{
+    margin-left: 10px;
+}
+.foot{
+    font-size: 30px;
+    color: rgba(0,0,0,0.34);
+}
+
+
+
