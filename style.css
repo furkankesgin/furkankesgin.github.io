@@ -126,7 +126,7 @@ text-align: center;
 }
 .hero-container h6{
     filter: blur(1px);
-    color: #85af4b;
+    color: black;
 }
 .hero-container h6:hover{
     background-image: url("images/ASD.PNG");
