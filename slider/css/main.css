@@ -1,0 +1,242 @@
+html,
+body,
+#cover {
+	height: 100%;
+}
+#cover {
+	background: url(../images/mainBg.jpg) no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.fixed-top {
+    max-width: 1140px;
+    margin: 30px auto;
+	transition: 0.2s all linear;
+}
+h1{
+	margin-top: 20%;
+	font-family: 'Cairo', sans-serif;
+	color:#fff;
+	font-size: 50px;
+	font-style: italic;
+	margin-bottom: 40px;
+}
+h2{
+	font-family: 'Montserrat', sans-serif;
+	color:#fff;
+	font-size: 75px;
+	margin-bottom:30px;
+}
+.btn-primary{
+	background-color: #fed136;
+	border-style: none;
+	font-family: 'Montserrat', sans-serif; 
+	font-size:18px;
+	padding: 20px 40px;
+}	
+	
+.btn-primary:hover{
+	background-color:#fff;
+	color:#fed136;
+}	
+
+a.nav-link{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	color:whitesmoke !important;
+	transition: color 0.5s ease;
+	-webkit-transition: color 0.5s ease;
+	-moz-transition: color 0.5s ease;
+	-o-transition: color 0.5s ease;
+}
+a.nav-link:hover{
+	
+	color:#fed136 !important;
+	
+}
+
+
+/*Services Section*/
+
+#services{
+	padding:120px 0px;
+}
+.services-top h3{
+	font-family:'Montserrat', sans-serif;
+	font-size:40px;
+	font-weight: 700;
+}
+
+.services-top p{
+	font-family: 'Cairo', sans-serif;
+	color:#777;
+	font-size:16px;
+	font-style: italic;
+	margin-bottom:80px;
+	font-weight: 700;
+	
+}
+
+.item-circle{
+	border:3px solid #fed136;
+	width: 100px;
+	height: 100px;
+    margin:0 auto;    /* ortalamakicin kullanilir*/
+	border-radius: 200px;
+}
+
+.services-content i{
+	color:#fed136;
+	line-height: 100px;  /*100 px verdik cunku yukarida height ve  weight i 100 verdik*/
+	
+}
+
+.services-content h4{
+	margin-top: 25px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	color:#222;
+	
+}
+.services-content p{
+	font-family: 'RobotoSlap Regular';
+	font-size:14px;
+	color:#777;
+}
+
+/*PORTFOLIO DESIGN*/
+#portfolio{
+	background-color: #f7f7f7;
+	padding-top:120px;
+	padding-bottom:70px;
+}
+
+.portfolio-top h3{
+	font-family:'Montserrat', sans-serif;
+	font-size:40px;
+	font-weight: 700;
+	
+}
+.portfolio-top p{
+	font-family: 'Cairo', sans-serif;
+	color:#777;
+	font-size:16px;
+	font-style: italic;
+	margin-bottom:80px;
+	font-weight: 700;
+	
+}
+.card{
+	border-style:none;
+	
+}
+.portfolio-content .row{
+	margin-bottom:50px;
+}
+
+.portfolio-content .card-title{
+	font-family: 'Monserrat', sans-serif;
+	font-size:18px;
+	font-weight: 700;
+	padding-top:20px;
+	 
+}
+.portfolio-content .card-subtitle{
+	font-family:'Cairo', serif;
+	font-size:14px;
+	font-style: italic;
+	padding-bottom:20px;
+}
+/*PORTFOLIO DESIGN end*/
+/*about us*/
+
+#about-us{
+	padding-top:120px;
+	padding-bottom:30px;
+}
+
+.about-us-top h3{
+	font-family:'Monserrat', sans-serif;
+	font-size:40px;
+	font-weight: 700;
+	
+}
+
+.about-us-top p{
+	font-family:'Cairo', sans-serif;
+	color: #777;
+	font-size:16px;
+	font-style: italic;
+	margin-bottom: 70px;
+	
+}
+.about-us-content .row{
+	margin-bottom: 90px;
+	
+}
+
+.about-us-content h4{
+	font-family:'Monserrat', sans-serif;
+	font-size:18px;
+	font-weight: 700;
+	
+}
+
+.about-us-content p{
+	font-family:'Cairo', sans serif;
+	color:#777;
+	font-size:16px;
+}
+
+.about-us-content{
+	position: relative;
+}
+.about-us-content:before{    /* bunuun anlaami akasina cizgi cekmesi icin yaptigimiz aslinda arkasina cizgi cekiyor	*/
+	position:absolute;
+	top: 0;
+	bottom: 0;
+	content: "";
+	width: 4px;
+	background-color: red;
+	left:50%;
+	margin-left: -2px;
+}
+.about-us-circle{
+	position: relative;
+	text-align: center;
+}
+.about-us-circle:before{
+	top: 0;
+	bottom:0;
+	position: absolute;
+	content:"";
+	width: 176px;
+	height:176px;
+	background-color: #fed136;
+	border-radius:170px;
+	boreder:7px solid red;
+	left:50%;
+	margin-left:-91px;
+}
+
+.about-us-circle .yellow-text{
+	position:relative;
+	z-index:1;
+	padding-top:40px;
+	font-family: 'Monserrat', sans-serif;
+	font-size:18px;
+	font-weight: 700;
+	color:white;
+}
+/*Smooth scrolling*/
+
+.fixed-top.change-fix-top{
+	margin-top:0;
+	background-color: #1886c7;
+	max-width: 20000px;
+	transition: all .8s ease;
+}
+
