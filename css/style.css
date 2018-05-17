@@ -1,0 +1,631 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.nav-ust{
+    float: right;
+    font-size: 2em;
+    color:#ecc54b;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: .5s;
+    background-color: rgba(0,0,0,0.54);
+    z-index: 3;
+
+}
+nav.black{
+    background: rgba(0,0,0,.82);
+    height: 80px;
+    padding: 10px 50px;
+}
+nav .logo{
+    float:left;
+
+}
+nav .logo img{
+    height: 80px;
+    transition: .5s;
+
+}
+
+nav.black .logo img{
+
+    height: 60px;
+}
+nav.black ul li a{
+    color:white;
+}
+nav ul{
+    float: right;
+    margin:40px;
+    padding: 0;
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+    color: #ffffff;
+}
+nav ul li a{
+
+    color:#fff;
+    padding: 5px 20px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+nav ul li a.active,
+nav ul li a:hover{
+    font-weight: 900;
+    color: #ecc54b;
+    text-decoration: none;
+}
+
+
+/* hero container */
+
+
+/*HEADER(HERO SECTION START HERE*/
+header{
+
+    height:600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-y: -160px;
+}
+#Mission{
+    padding:100px 0px;
+    background-color: rgba(0,0,0,0.04);
+    margin-top:200px;
+
+
+}
+#Mission h3{
+
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom: 80px;
+    margin-left: 50px;
+
+}
+#Mission h4{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#services{
+   /* margin-top: 150px;*/
+    padding:120px 0px;
+
+    background-color: rgba(0,0,0,0.04);
+}
+
+
+.services-top h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+
+
+.services-top p{
+    font-family: 'Cairo', sans-serif;
+    color:#777;
+    font-size:16px;
+    font-style: italic;
+    margin-bottom:80px;
+    font-weight: 700;
+
+}
+.item-circle{
+    border: 1px solid rgba(0, 0, 0, .1);
+    width: 100px;
+    height: 100px;
+    margin:0 auto;    /* ortalamakicin kullanilir*/
+    border-radius: 200px;
+
+
+}
+
+.services-content i{
+    color:#fed136;
+    line-height: 100px;  /*100 px verdik cunku yukarida height ve  weight i 100 verdik*/
+
+
+}
+.services-content{
+}
+.services-content .bounceInLeft:hover{
+
+    background: url("../images/pointer/arrow.png") no-repeat scroll center bottom;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+
+
+}
+
+.services-content .bounceInRight:hover{
+
+    background: url("../images/pointer/arrow.png") no-repeat scroll center bottom ;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+
+
+}
+.services-content .bounceInDown:hover{
+
+    background: url("../images/pointer/arrow.png") no-repeat scroll center bottom ;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+
+
+}
+
+.services-content .bounceInUp:hover{
+
+    background: url("../images/pointer/arrow.png") no-repeat scroll center bottom ;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+
+
+}
+.services-content h4{
+    margin-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color:#222;
+
+}
+.services-content p{
+    font-family: 'RobotoSlap Regular';
+    font-size:14px;
+    color:#777;
+}
+.services-content .row .col-md-3 .shield{
+    text-decoration-line: none;
+
+}
+.row{
+    margin-top: 50px;
+    margin-bottom: 1px;
+}
+.services-content .row .col-md-3:hover{
+    font-size: 2em;
+
+}
+
+
+
+.row .col-md-2{
+    height: 50px;
+}
+
+.portfolio-top{
+    margin-top: 100px;
+}
+.portfolio-top h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+.card-title{
+    padding: 10px;
+}
+.portfolio-content .row .col-md-4 .card{
+    margin-right: 30px;
+
+}
+
+
+@media (max-width: 768px){
+    nav-ust{
+        padding-right: 10%;
+        padding-left: 10%;
+
+    }
+}
+
+.title{
+    color: #ff000e;
+    text-align: center;
+    margin-top:100px;
+}
+
+.photos{
+
+    margin-top: 100px;
+    text-align: center;
+}
+.photos img{
+    padding-right: 150px;
+    padding-bottom: 100px;
+}
+
+#certificates{
+    padding:100px 0px;
+    background-color: rgba(0,0,0,0.04);
+
+}
+#footer{
+    background-color: rgba(0,0,0,0.82);
+    padding-bottom: 0px;
+
+}
+#footer .row {
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#footer .row .col-md-3 h6{
+    font-weight: 600;
+
+}
+#footer .row .col-md-3 pre{
+    text-align: left;
+}
+
+#footer .row i{
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #fed136;
+}
+#footer .row h6{
+    color: #fed350;
+}
+
+.top-contact h3{
+    padding: 50px;
+    color: whitesmoke;
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+
+
+}
+
+#footer .row pre{
+    color:whitesmoke;
+}
+#footer .row a{
+
+    text-decoration-line: none;
+    color: whitesmoke;
+}
+
+#footer .row a:hover{
+
+    text-decoration-line: none;
+    color: #fed136;
+}
+
+
+
+#footer .copyriht{
+    color: #818a91;
+    margin-top:10px;
+    text-align: center;
+
+}
+
+
+.p1{
+    filter:grayscale(1);
+    color:#777;
+    opacity: 0.7;
+    margin: 0px;
+
+}
+
+
+.p1:hover{
+
+    /*opacity: 1;*/
+    filter: none;
+    transition: filter 0.7s, -webkit-filter 0.7s;
+    opacity: 1;
+}
+.news-top{
+    margin-top: 100px;
+}
+.news-top h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+
+
+}
+
+#products{
+    background-color: rgba(0,0,0,0.04);
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.products-top{
+    margin-top: 100px;
+}
+.products-top h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom: 100px;
+
+}
+
+.resim-text img{
+    margin-right: 50px;
+}
+.resim-text{
+    margin-top: 40px;
+}
+#news{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    padding-top:0px;
+}
+
+.resim-text:after{
+    width: 70%;
+    color: red;
+    height: 4px;
+    
+}
+
+.resim-text h6{
+    opacity: 0.7;
+}
+#price{
+
+}
+.price-top{
+    margin-top: 100px;
+}
+
+.price-top h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom: 100px;
+}
+
+.pricea{
+    color: white;
+    text-decoration-line: none;
+
+}
+.pricea:hover{
+    text-decoration-line: none;
+    color: #fff;
+}
+
+
+
+
+#contact{
+    background: url(../images/contact/video-bg.png)no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 50px 0;
+    background-color: #000;
+    padding-bottom: 70px;
+
+
+
+}
+.contact-top{
+    margin-top:150px;
+}
+
+.contact-top h3{
+    font-family: 'Monserrat',sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fed136;
+}
+
+.contact-top p{
+    font-family: 'Cairo',sans-serif;
+    color: #777;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 70px;
+}
+
+#name, #email, #phone, #company{
+    width: 90%;
+    height: 50px;
+    margin-bottom: 26px;
+    border-style: none;
+    border-radius: 4px;
+    padding-left: 20px;
+    margin-left: 5%;
+
+
+
+}
+textarea{
+    width: 90%;
+    height: 202px;
+    border-style: none;
+    border-radius: 4px;
+    padding-left: 20px;
+    padding-top: 15px;
+    margin-left: 5%;
+    color:black;
+
+}
+
+.kalamaki-form-element{
+    font-family: 'Monserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.submit{
+    color:#000;
+    background-color: #fed136;
+    border-color: #000;
+    font-weight: 900;
+    padding: 20px;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+.submit:hover{
+    color:#fed136;
+    background-color: #000;
+    border-color: #fed136;
+}
+
+.faded{
+
+    margin-right:50px;
+    margin-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+
+}
+
+#hidden{
+    background-color: #777;
+
+    color: #fed136;
+
+
+}
+
+
+.navbar-nav .nav-item .nav-link{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color:whitesmoke;
+    transition: color 0.5s ease;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+}
+a.nav-link:hover{
+
+    color:#fed136 !important;
+
+}
+.navbar-nav .nav-item .nav-link.active{
+    color: #fed136; !important;
+}
+
+
+
+@media (max-width: 574.99px){
+
+    .navbar-nav{
+        /*background-color: #777;*/
+        padding: 20px;
+        text-align: center;
+        margin-right: 33%;
+    }
+    .justify-content-end{
+        background-color: #777;
+    }
+    .bg-warning{
+        border-radius: 10px;
+    }
+    nav button{
+
+    }
+    .navbar-toggler{
+        background-color: #fed136;
+    }
+
+
+    .hero-container w3-content img .mySlides{
+        height: 400px; !important;
+    }
+
+    #Mission h4{
+        font-size: 15px;
+    }
+
+    .portfolio-top p,
+    .card-block p,
+    .news-top p,
+    .resim-text h5{
+        font-size: 12px;
+    }
+    .photos img{
+        margin-left:30%;
+
+    }
+    .card-block h4,
+    .resim-text h4 ,
+    .card-header h4{
+        font-size:16px;
+    }
+
+    .top-contact h3,
+    .news-top h3,
+    .portfolio-top h3,
+    #Mission h3,
+    .contact-top h3,
+    .products-top h3
+    .price-top h3{
+        font-size:30px;}
+
+    .copyriht   {
+        font-size: 11px;
+    }
+    #footer pre{
+        margin-left: 40px;
+    }
+    .photos .slideInLeft {
+        margin-right: 30%;
+    }
+    .copyriht p{
+        width: 100%;
+    }
+    .resim-text img{
+        width: 100px;
+    }
+    .resim-text h6{
+        font-size: 11px;
+    }
+
+    .card-body h1{
+        font-size: 20px;
+    }
+    .card-body .mb-4 p{
+        font-size:35px;
+    }
+    .content_card{
+        font-size: 11px;
+    }
+
+
+}
+
