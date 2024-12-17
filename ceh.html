@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+    /* Basic Reset */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .question {
+        margin-bottom: 20px;
+    }
+
+    .choices {
+        list-style: none;
+        padding: 0;
+    }
+
+    .choices li {
+        margin: 10px 0;
+    }
+
+    .choices li button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #007bff;
+        color: white;
+    }
+
+    .choices li button:hover {
+        background: #0056b3;
+    }
+
+    .result {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .correct {
+        background: #28a745 !important;
+        color: white;
+    }
+
+    .incorrect {
+        background: #dc3545 !important;
+        color: white;
+    }
+
+    /* Buttons */
+    #submit, #skip, #finish, #next {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        width: 100%;
+    }
+
+    #submit {
+        background: #28a745;
+    }
+
+    #submit:hover {
+        background: #218838;
+    }
+
+    #skip {
+        background: #6c757d;
+    }
+
+    #skip:hover {
+        background: #5a6268;
+    }
+
+    #finish {
+        background: #17a2b8;
+    }
+
+    #finish:hover {
+        background: #138496;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 250px;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        height: 100vh;
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.hidden {
+        transform: translateX(-100%);
+    }
+
+    .sidebar h2 {
+        text-align: center;
+    }
+
+    .question-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .question-list li {
+        text-align: center;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        background: #6c757d;
+        color: white;
+        cursor: pointer;
+    }
+
+    .question-list li.active {
+        background: #007bff;
+    }
+
+    .question-list li.answered {
+        background: #28a745;
+    }
+
+    .question-list li:hover {
+        background: #5a6268;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Close button for the sidebar */
+    .close-btn {
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Main content */
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 0;
+        transition: margin-left 0.3s;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+
+        .question-list li {
+            font-size: 14px;
+        }
+
+        .choices li button {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        #submit, #skip, #finish, #next {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        .sidebar {
+            width: 200px;
+            height: 100%;
+        }
+
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+
+        .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            margin: 10px;
+        }
+
+        .question-list li {
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        .choices li button {
+            font-size: 12px;
+            padding: 6px;
+        }
+
+        #submit, #skip, #finish, #next {
+            font-size: 12px;
+            padding: 6px;
+        }
+
+        .sidebar {
+            padding: 10px;
+        }
+
+        .main-content {
+            padding: 10px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()">×</span>
+        <h2>Questions</h2>
+        <ul class="question-list" id="question-list">
+            <!-- Question numbers will be dynamically generated -->
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="container main-content">
+        <h1>Quiz App</h1>
+        <div class="question-number" id="question-number">1/1</div>
+        <div id="quiz">
+            <!-- Quiz questions will be loaded here -->
+        </div>
+        <button id="submit">Submit</button>
+        <button id="skip">Skip</button>
+        <button id="next" style="display: none;">Next</button>
+        <button id="finish" style="display: none;">Finish</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestionIndex = 0;
+        let selectedAnswer = null;
+        let score = 0;
+        let answeredQuestions = []; // Array to track answered questions
+        
+        // Fetch questions from the JSON file
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data;
+                initializeQuestionList();
+                loadQuiz();
+            });
+
+        function loadQuiz() {
+            const quizDiv = document.getElementById('quiz');
+            const questionNumberDiv = document.getElementById('question-number');
+            const questionData = questions[currentQuestionIndex];
+            const questionList = document.getElementById('question-list');
+        
+            // Update question number
+            questionNumberDiv.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
+        
+            // Reset the quiz content
+            quizDiv.innerHTML = '';
+        
+            // Question
+            const questionElem = document.createElement('div');
+            questionElem.classList.add('question');
+            questionElem.innerHTML = `<p>${questionData.question}</p>`;
+            quizDiv.appendChild(questionElem);
+        
+            // Choices
+            const choicesList = document.createElement('ul');
+            choicesList.classList.add('choices');
+        
+            questionData.choices.sort(() => Math.random() - 0.5); // Shuffle choices
+        
+            questionData.choices.forEach(choice => {
+                const choiceItem = document.createElement('li');
+                const button = document.createElement('button');
+                button.textContent = choice;
+                button.onclick = () => selectAnswer(button, choice);
+                choiceItem.appendChild(button);
+                choicesList.appendChild(choiceItem);
+            });
+        
+            quizDiv.appendChild(choicesList);
+        
+            // Update question list status
+            const questionItems = questionList.querySelectorAll('li');
+            questionItems.forEach((item, index) => {
+                item.classList.remove('active', 'answered', 'unanswered');
+                if (index === currentQuestionIndex) {
+                    item.classList.add('active');
+                }
+                // Mark as answered or unanswered based on state
+                if (answeredQuestions.includes(index)) {
+                    item.classList.add('answered');
+                } else {
+                    item.classList.add('unanswered');
+                }
+            });
+        
+            selectedAnswer = null;
+            document.getElementById('result').innerHTML = '';
+        
+            // Hide Next button and Show Submit button
+            document.getElementById('next').style.display = 'none';
+            document.getElementById('submit').style.display = 'inline-block';
+            document.getElementById('skip').style.display = 'inline-block';
+        }
+
+        function selectAnswer(button, choice) {
+            const buttons = document.querySelectorAll('.choices button');
+            buttons.forEach(btn => btn.style.background = '#007bff'); // Reset button styles
+            button.style.background = '#ffc107'; // Highlight selected button
+            selectedAnswer = choice;
+        }
+
+        function initializeQuestionList() {
+            const questionList = document.getElementById('question-list');
+            questionList.innerHTML = '';
+        
+            questions.forEach((_, index) => {
+                const questionItem = document.createElement('li');
+                questionItem.textContent = index + 1;
+                questionItem.onclick = () => goToQuestion(index);
+                questionList.appendChild(questionItem);
+            });
+        }
+
+        function goToQuestion(index) {
+            currentQuestionIndex = index;
+            loadQuiz();
+        }
+
+        document.getElementById('submit').onclick = () => {
+            const resultDiv = document.getElementById('result');
+            const questionData = questions[currentQuestionIndex];
+        
+            if (!selectedAnswer) {
+                resultDiv.innerHTML = `<p class='incorrect'>Please select an answer before submitting.</p>`;
+                return;
+            }
+        
+            if (selectedAnswer === questionData.answer) {
+                score += 100 / questions.length;
+                resultDiv.innerHTML = `<p class='correct'>Correct! ${questionData.explanation}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p class='incorrect'>Incorrect. Correct answer: ${questionData.answer}</p>`;
+            }
+        
+            answeredQuestions.push(currentQuestionIndex); // Mark question as answered
+            document.getElementById('next').style.display = 'inline-block';
+            document.getElementById('submit').style.display = 'none';
+        };
+
+        document.getElementById('next').onclick = () => {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuiz();
+            }
+        };
+
+        document.getElementById('finish').onclick = () => {
+            alert(`Your final score is: ${score.toFixed(2)}%`);
+            window.location.reload();
+        };
+
+        document.getElementById('skip').onclick = () => {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuiz();
+            }
+        };
+
+        // Hamburger menu toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+            const mainContent = document.querySelector('.main-content');
+            if (sidebar.classList.contains('hidden')) {
+                mainContent.style.marginLeft = '0';
+            } else {
+                mainContent.style.marginLeft = '250px'; // Sidebar width
+            }
+        }
+    </script>
+</body>
+</html>
